@@ -46,9 +46,10 @@ public class form extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        List<Student> students = (List<Student>) session.getAttribute("students");
-        students = (students == null ? new ArrayList<>() : students);
-
+        ArrayList<Student> students = (ArrayList<Student>) session.getAttribute("students");
+        if(students==null){
+            students = new ArrayList<Student>();
+        }
         String imie = request.getParameter("firstName");
         String nazwisko = request.getParameter("lastName");
         String email = request.getParameter("email");
