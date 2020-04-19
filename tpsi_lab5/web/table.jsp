@@ -8,13 +8,6 @@
         <title>Java Web - laboratorium 5</title>
     </head>
     <body>
-        <form action='/tpsi_lab5/form' method='post'>
-            Podaj dane studenta:
-            <input type='text' name='firstName'>
-            <input type='text' name='lastName'>
-            <input type='text' name='email'>
-            <input type='submit'>
-        </form>
         
         <table>
         <c:forEach items="${sessionScope.students}" var="os">
@@ -25,6 +18,14 @@
                 </tr>
             </c:forEach>
         </table>    
+        
+        <form action='/tpsi_lab5/form' method='post'>
+            Podaj dane studenta:
+            <input type='text' name='firstName'>
+            <input type='text' name='lastName'>
+            <input type='text' name='email'>
+            <input type='submit'>
+        </form>
         <p>Licznik odwiedzin strony: ${sessionScope.licznik}</p>
     </body>
 </html>
